@@ -42,17 +42,17 @@ export class AppComponent {
   }
 
   delete(item) {
-    var parentIndex = 0;
-
     for (const monthGroup of this.itemsGroupedByMonth) {
       var index = monthGroup.items.indexOf(item);
       if (index !== -1) {
         monthGroup.items.splice(index, 1);
         if (monthGroup.items.length == 0) {
-          this.itemsGroupedByMonth.splice(parentIndex, 1);
+          this.itemsGroupedByMonth.splice(
+            this.itemsGroupedByMonth.indexOf(monthGroup),
+            1
+          );
         }
       }
-      parentIndex++;
     }
   }
 
