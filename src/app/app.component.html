@@ -1,0 +1,10 @@
+<hello name="{{ name }}"></hello>
+
+<ul>
+    <li *ngFor="let monthlyGroup of itemsGroupedByMonth">
+      {{monthlyGroup.month}}
+      <ul>
+        <li *ngFor="let item of monthlyGroup.items">{{item.name}} <button (click)="delete(item)">Delete</button></li>
+      </ul>
+    </li>
+</ul>
